@@ -247,7 +247,7 @@ namespace adventureGame
                     this.Refresh();
                     Thread.Sleep(2000);
                     middleButton.Visible = true;
-                    middleButton.Text = $"PUSH BOTTON TO SEE WHAT HAPPENS!";
+                    middleButton.Text = $"PUSH BOTTON TO SEE WHAT HAPPENS";
                     page = 99;
                     break;
                     //this is the outcome of you keep looking around
