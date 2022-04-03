@@ -122,5 +122,8 @@
   <ItemGroup>
     <None Include="Resources\258142__tuudurt__level-win.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\194624__harbour11__trumpet2.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

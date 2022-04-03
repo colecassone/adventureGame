@@ -74,7 +74,10 @@ namespace adventureGame
             {
                 page = 10;
             }
-       
+       else if (page == 4)
+            {
+                page = 12; 
+            }
             DisplayPage();
         }
 
@@ -138,6 +141,7 @@ namespace adventureGame
             {
                 page = 11; 
             }
+            
             DisplayPage();
         }
         private void middleButton_Click(object sender, EventArgs e)
@@ -173,6 +177,10 @@ namespace adventureGame
             {
                 page = 99; 
             }
+            else if (page == 12)
+            {
+                page = 8;
+            }
             DisplayPage();
         }
         public void DisplayPage()
@@ -189,6 +197,8 @@ namespace adventureGame
                     break;
                     // when the start to the adveture 
                     case 2:
+                    SoundPlayer A2 = new SoundPlayer(Properties.Resources.A2);
+                    A2.Play();
                     imageOutput.Image = Properties.Resources.PG2;
                     outputLabel.Visible = false;
                     textBoxInput.Visible = true;
@@ -222,7 +232,7 @@ namespace adventureGame
                     SoundPlayer ranGuy = new SoundPlayer(Properties.Resources.A99);
                     ranGuy.Play();
                     imageOutput.Image = Properties.Resources.PG5;
-                    textBoxInput.Text = $"You are going down then out of the blue someone calls you by name and says \"you and Jessica had a great weding\" and you are confused because that is not your wife's name. Then you realized what really happened that night!";
+                    textBoxInput.Text = $"You are going down then out of the blue someone calls you by name and says \"you and Jessica had a great wedding\" and you are confused because that is not your wife's name. Then you realized what really happened that night!";
                     middleButton.Text = $"OR";
                     rightButton.Text = $"Deny what he says and go home";
                     leftButton.Text = $"Find out who Jessica is and go talk to her"; 
@@ -233,7 +243,7 @@ namespace adventureGame
                     leftButton.Visible = false;
                     rightButton.Visible = false;
                     middleButton.Visible = false;
-                    textBoxInput.Text = $"She yells \" YOUR MARRIED!! your wife is going to love to here what we did last night\" then she hangs up the the phone \n \n So when you got home...";
+                    textBoxInput.Text = $"She yells \" YOU'RE MARRIED!! Your wife is going to love to here what we did last night\" then she hangs up the phone \n \n So when you got home...";
                     this.Refresh();
                     Thread.Sleep(2000);
                     middleButton.Visible = true;
@@ -250,6 +260,10 @@ namespace adventureGame
                     break;
                     //this is what happens when you see Jessica
                 case 8:
+                   
+                    leftButton.Visible = true;
+                    rightButton.Visible = true;
+                    middleButton.Visible = true;
                     imageOutput.Image = Properties.Resources.PG8;
                     leftButton.Text = $"Explain how sorry you are and say you were married to another person";
                     middleButton.Text = $"OR";
@@ -261,7 +275,7 @@ namespace adventureGame
                     leftButton.Visible = false;
                     rightButton.Visible = false;
                     middleButton.Visible = false;
-                    textBoxInput.Text = $"She agrees to get divorce and not tell anyone what really happend that night then"; 
+                    textBoxInput.Text = $"She agrees to get divorce and not tell anyone what really happened that night then"; 
                    this.Refresh();
                     Thread.Sleep(1500);
                     middleButton.Visible = true;
@@ -276,7 +290,7 @@ namespace adventureGame
                     this.Refresh();
                     Thread.Sleep(1500);
                     middleButton.Visible = true;
-                    middleButton.Text = $"Click here to see what happens nexts";
+                    middleButton.Text = $"Click here to see what happens next";
                     break;
                     case 11:
                     leftButton.Visible = false;
@@ -286,9 +300,19 @@ namespace adventureGame
                     this.Refresh();
                     Thread.Sleep(1500);
                     middleButton.Visible = true;
-     
-                    middleButton.Text = $"Click here to see what happens nexts";
+                    middleButton.Text = $"Click here to see what happens next";
                     break;
+                  //When you called here and asked her to meet 
+                case 12:
+                    leftButton.Visible = false;
+                    rightButton.Visible = false;
+                    middleButton.Visible = false;
+                    textBoxInput.Text = $"She say yes";
+                    this.Refresh();
+                    Thread.Sleep(1500);
+                    middleButton.Visible = true;
+                    middleButton.Text = $"Click here to see what happens"; 
+                    break; 
                 //This is the good ending 
                 case 100:
                     SoundPlayer youWin = new SoundPlayer(Properties.Resources.A100);
@@ -297,7 +321,7 @@ namespace adventureGame
                     rightButton.Visible = true;
                     middleButton.Visible = true;
                     imageOutput.Image = Properties.Resources.PG100;
-                    textBoxInput.Text = $"You go home to your wife and live happily ever after and she never new what happend that day";
+                    textBoxInput.Text = $"You go home to your wife and live happily ever after and she never knew what happened that day";
                     leftButton.Text = "";
                     middleButton.Text = "";
                     rightButton.Text = "";
